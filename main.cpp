@@ -12,5 +12,8 @@ int main()
     l.add(3);
     l.show();
 
+    l.sort();
+    l.show();
+
     return 0;
 }

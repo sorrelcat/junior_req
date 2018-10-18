@@ -27,6 +27,15 @@ void List::show() {
 }
 
 void List::sort(){
+    for(Node* t = head; t; t = t->next) {
+        for(Node* p = head; p; p = p->next) {
+            if(t->value < p->value) {
+                int k = t->value;
+                t->value = p->value;
+                p->value = k;
+            }
+        }
+    }
 }
 
 /*

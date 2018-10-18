@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1539869386 source:e:\junior_req\list\main.cpp
+1539872751 source:e:\junior_req\list\main.cpp
 	<iostream>
 	"List.h"
 
-1539869378 e:\junior_req\list\list.h
+1539872478 e:\junior_req\list\list.h
 	"Node.h"
 	<stddef.h>
 
