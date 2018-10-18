@@ -16,6 +16,7 @@ public:
     void add(int t);
     void show();
     void sort();
+    Node* search(int t);
 };
 
 #endif // LIST_H_INCLUDED

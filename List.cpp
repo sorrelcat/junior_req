@@ -38,8 +38,14 @@ void List::sort(){
     }
 }
 
+Node* List::search(int t) {
+    for(Node* p = head; p; p = p->next) {
+        if(p->value == t) return p;
+    }
+    return NULL;
+}
+
 /*
-Sort
 Search
 Insert
 Update

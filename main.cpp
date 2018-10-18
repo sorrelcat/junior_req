@@ -15,5 +15,9 @@ int main()
     l.sort();
     l.show();
 
+    l.search(1)->print();
+    l.search(2)->print();
+    l.search(3)->print();
+
     return 0;
 }

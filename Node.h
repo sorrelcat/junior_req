@@ -4,6 +4,8 @@
 struct Node {
     int value;
     Node* next;
+
+    void print();
 };
 
 #endif // NODE_H_INCLUDED
