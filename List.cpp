@@ -16,9 +16,11 @@ void List::add(int t) {
     temp->value = t;
     temp->next = head;
     head = temp;
+    length++;
 }
 
 void List::show() {
+    cout<<"List length="<<length<<endl;
     Node* temp = head;
     while(temp != NULL) {
         cout << temp->value << endl;
@@ -45,9 +47,34 @@ Node* List::search(int t) {
     return NULL;
 }
 
-/*
-Search
-Insert
-Update
-Delete
-*/
+void List::insert(int t, int n) {
+    if(length < n-1 || n < 0) cout << "Can't insert node at this position";
+    else {
+        length++;
+        Node *temp = head;
+        Node *k = new Node();
+        k->value = t;
+        while(--n) {
+            temp = temp->next;
+        }
+        k->next = temp->next;
+        temp->next = k;
+
+    }
+}
+
+void List::del(int t) {
+    if(head->value == t) {
+        head = head->next;
+        length--;
+    }
+    else {
+        for(Node* p = head; p; p = p->next) {
+            if(p->next->value == t) {
+                p->next = p->next->next;
+                length--;
+                return;
+            }
+        }
+    }
+}

@@ -5,7 +5,6 @@ using namespace std;
 
 void Node::print() {
     cout << value;
-    if(next) cout << " Next: " << next->value;
-    else cout << " Next: none";
-    cout << endl;
+    if(next) cout << " Next: " << next->value << endl;
+    else cout << " Next: none" << endl;
 }
