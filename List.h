@@ -21,6 +21,7 @@ public:
     Node* search(int t); //returns first node with value=t
     void insert(int t, int n); //inserts number t in n position (from 0 to length-1)
     void del(int t); //deletes first node with value=t
+    void update(int t, int n); //updates value of the element in given index
 };
 
 #endif // LIST_H_INCLUDED

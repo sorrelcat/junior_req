@@ -44,11 +44,19 @@ Node* List::search(int t) {
     for(Node* p = head; p; p = p->next) {
         if(p->value == t) return p;
     }
-    return NULL;
+    cout << t << " is not in this list" << endl;
+    return new Node();
 }
 
 void List::insert(int t, int n) {
-    if(length < n-1 || n < 0) cout << "Can't insert node at this position";
+    if(length < n-1 || n < 0) cout << "Can't insert node at this position" << endl;
+    else if(n==0) {
+        Node* temp = new Node();
+        temp->value = t;
+        temp->next = head;
+        head = temp;
+        length++;
+    }
     else {
         length++;
         Node *temp = head;
@@ -59,22 +67,36 @@ void List::insert(int t, int n) {
         }
         k->next = temp->next;
         temp->next = k;
-
     }
 }
 
-void List::del(int t) {
-    if(head->value == t) {
+void List::del(int n) {
+    if(length < n+1 || n < 0) cout << "Can't delete node at " << n << " position" << endl;
+    else if(n==0) {
         head = head->next;
         length--;
     }
     else {
-        for(Node* p = head; p; p = p->next) {
-            if(p->next->value == t) {
-                p->next = p->next->next;
-                length--;
-                return;
-            }
+        Node *temp = head;
+        while(--n) {
+            temp = temp->next;
         }
+        temp->next = temp->next->next;
+        length--;
+    }
+}
+
+void List::update(int t, int n) {
+    if(length < n+1 || n < 0) cout << "Can't update node at " << n << " position" << endl;
+    else if(n==0) {
+        head->value = t;
+    }
+    else {
+        Node *temp = head;
+        if(n == 0) head->value = t;
+        else while(n--) {
+            temp = temp->next;
+        }
+        temp->value = t;
     }
 }

@@ -4,7 +4,5 @@
 using namespace std;
 
 void Node::print() {
-    cout << value;
-    if(next) cout << " Next: " << next->value << endl;
-    else cout << " Next: none" << endl;
+    if(value != NULL) cout << value << endl;
 }
